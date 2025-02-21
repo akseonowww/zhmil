@@ -1438,17 +1438,6 @@ a.vote-btn {
    position: relative;
 }
 
-.dogovor .new-product-image iframe::after {
-   content: "";
-   display: block;
-   background: center center url(./t.png) no-repeat;
-   height: 8px;
-   width: 8px;
-   position: absolute;
-   bottom: 0;
-   left: 0;
-}
-
 .dogovor .new-product-image a,
 .dogovor .new-product-image a:-webkit-any-link,
 .dogovor .new-product-image a:hover,
