@@ -239,18 +239,20 @@
                   </h2>
                </div>
 
-               <div class="new-product-prices">
+               <div class="new-product-prices" style="padding-top: 20px;">
                   <div
                      class="new-product-prices__item"
                      data-aos="fade-right"
                      data-aos-delay="1800"
                      data-aos-duration="1500"
+                     style="border: none;"
                   >
-                     <div class="new-product-prices__name">В 2025</div>
-                     <div class="new-product-prices__points"></div>
-                     <div class="new-product-prices__price">64%</div>
+                  <div class="new-product-prices__name">100 дней</div>
+                  <!-- <div class="new-product-prices__name">В 2025</div> -->
+                  <!-- <div class="new-product-prices__points"></div> -->
+                  <div class="new-product-prices__price">62%</div>
                   </div>
-                  <div
+                  <!-- <div
                      class="new-product-prices__item red"
                      data-aos="fade-right"
                      data-aos-delay="2000"
@@ -258,7 +260,7 @@
                   >
                      <div class="new-product-prices__name">Не в 2025</div>
                      <div class="new-product-prices__price">36%</div>
-                  </div>
+                  </div> -->
                   <!-- <a
                      data-aos="fade-right"
                      data-aos-delay="2200"
@@ -270,6 +272,12 @@
                   > -->
                </div>
 
+               <canvas 
+               data-aos="fade-right"
+                     data-aos-delay="1800"
+                     data-aos-duration="1500"
+               id="myChart" width="400" height="200"></canvas>
+
                <div
                   class="new-product-desc"
                   data-aos="fade-up"
@@ -277,14 +285,11 @@
                   data-aos-duration="1200"
                >
                   <div class="new-product-desc__text">
-                     Букмекеры Polymarket: объем торгов в вопросе встречи
-                     Владимира Путина и Дональда Трампа составляет $2,7 млн,
-                     прекращения боевых действий — $3 млн.
                      <a
-                        target="_blank"
-                        href="https://polymarket.com/event/will-putin-meet-with-trump-by-first-100-days"
-                        >Источник</a
-                     >
+                     style="color: #fff;"
+                     target="_blank"
+                     href="https://polymarket.com/event/will-putin-meet-with-trump-by-first-100-days"
+                     >Polymarket</a>: $3 млн. на прекращение СВО
                   </div>
                   <div class="new-product-desc__parametrs">
                      <div class="new-product-parametr">СВО:</div>
@@ -1444,6 +1449,10 @@
    <!-- SWIPER -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+   <!-- CHART -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="./chart.js"></script>
 
    <!-- MY CODE -->
    <script src="./scripts.js"></script>
