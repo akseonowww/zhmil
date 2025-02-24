@@ -51,6 +51,28 @@ const shadowPlugin = {
 // Регистрируем плагин
 Chart.register(shadowPlugin);
 
+const svgString = `
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 8H12V16H0V8Z" fill="#00FF84"/>
+<path d="M8 0H16V24H8V0Z" fill="#00FF84"/>
+<path d="M4 16H12V20H4V16Z" fill="#00FF84"/>
+<path d="M4 4H12V8H4V4Z" fill="#00FF84"/>
+<path d="M24 8H12V16H24V8Z" fill="#00FF84"/>
+<path d="M16 0H12V24H16V0Z" fill="#00FF84"/>
+<path d="M20 16H4V20H20V16Z" fill="#00FF84"/>
+<path d="M20 4H4V8H20V4Z" fill="#00FF84"/>
+</svg>
+`;
+
+// Функция для конвертации SVG в Image
+const svgBlob = new Blob([svgString], { type: 'image/svg+xml' });
+const url = URL.createObjectURL(svgBlob);
+const img = new Image();
+img.onload = () => {
+   URL.revokeObjectURL(url);
+   callback(img);
+};
+img.src = url;
 
 const ctx = document.getElementById('myChart').getContext('2d');
 new Chart(ctx, {
@@ -63,9 +85,13 @@ new Chart(ctx, {
          fill: false,
          data: prices,
          borderWidth: 8,
-         pointStyle: "star", // Заменяем стандартную точку на изображение
+         // pointStyle: img,
+         // pointStyle: "circle", // Заменяем стандартную точку на изображение
          borderColor: '#00ff84',
          // pointRadius: 0,
+         pointOpacity: function (context) {
+            return context.dataIndex === prices.length - 1 ? '1' : '0'
+         },
          pointBackgroundColor: function (context) {
             return context.dataIndex === prices.length - 1 ? '#00ff84' : 'transparent'
          },
@@ -117,6 +143,13 @@ new Chart(ctx, {
             padding: 14, // Отступы внутри
             displayColors: false, // Отключить отображение цветных полосок для каждого значения
             callbacks: {
+               label: function (context) {
+                  let value = context.raw;
+                  if (typeof value === 'number') {
+                     value = Math.round(value) + '%'; // Округление до целого и добавление "%"
+                  }
+                  return value;
+               },
                labelTextColor: function () {
                   return '#00ff84'; // Цвет текста
                },
