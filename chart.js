@@ -81,7 +81,7 @@ new Chart(ctx, {
          padding: {
             top: 20,    // Отступ сверху
             bottom: 0, // Отступ снизу
-            left: 0,   // Отступ слева
+            left: 10,   // Отступ слева
             right: 10   // Отступ справа
          }
       },
@@ -120,7 +120,7 @@ new Chart(ctx, {
             ticks: {
                font: {
                   family: '"Better VCR", "JetBrains Mono", "Courier New", Courier, monospace',
-                  size: 16
+                  size: 12
                }
             }
          },
@@ -134,7 +134,7 @@ new Chart(ctx, {
                },
                font: {
                   family: '"Better VCR", "JetBrains Mono", "Courier New", Courier, monospace',
-                  size: 16
+                  size: 12
                }
             }
          }
