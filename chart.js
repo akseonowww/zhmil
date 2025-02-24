@@ -145,6 +145,8 @@ new Chart(ctx, {
             callbacks: {
                label: function (context) {
                   let value = context.raw;
+                  console.log(value)
+                  console.log(context)
                   if (typeof value === 'number') {
                      value = Math.round(value) + '%'; // Округление до целого и добавление "%"
                   }
@@ -180,13 +182,14 @@ new Chart(ctx, {
             }
          },
          y: {
-            grid: {
-               color: 'rgba(255, 255, 255, .1)' // Серый цвет линий сетки по Y
-            },
+            grid: { 
+               color: ctx => [50, 60, 70, 80].includes(ctx.tick.value) ? 'rgba(255, 255, 255, .1)' : 'transparent'
+            }, 
             ticks: {
-               callback: function (value) {
-                  return [0, 40, 50, 60, 70, 80, 100].includes(value) ? value + '%' : '';
-               },
+               callback: val => [50, 60, 70, 80].includes(val) ? val + '%' : '',
+               // callback: function (value) {
+                  // return [0, 40, 50, 60, 70, 80, 100].includes(value) ? value + '%' : '';
+               // },
                font: {
                   family: '"Better VCR", "JetBrains Mono", "Courier New", Courier, monospace',
                   size: 12
@@ -196,3 +199,14 @@ new Chart(ctx, {
       }
    }
 });
+
+// Обновление последнего значения в документе
+const updateLastValue = () => {
+   if (prices.length > 0) {
+      const lastValue = Math.round(prices[prices.length - 1]) + '%';
+      document.getElementById('valueZaDogovor100').textContent = lastValue;
+   }
+};
+
+// Вызываем функцию сразу после создания графика
+updateLastValue();
