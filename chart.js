@@ -58,20 +58,22 @@ new Chart(ctx, {
    data: {
       labels: labels,
       datasets: [{
-         label: 'Процент',
+         // label: 'ПРОЦЕНТ',
+         // label: '',
          fill: false,
          data: prices,
          borderWidth: 8,
+         pointStyle: "star", // Заменяем стандартную точку на изображение
          borderColor: '#00ff84',
          // pointRadius: 0,
          pointBackgroundColor: function (context) {
             return context.dataIndex === prices.length - 1 ? '#00ff84' : 'transparent'
          },
          pointBorderColor: function (context) {
-            return context.dataIndex === prices.length - 1 ? '#00ff84' : '#transparent'
+            return context.dataIndex === prices.length - 1 ? '#00ff84' : 'transparent'
          },
          pointRadius: function (context) {
-            return context.dataIndex === prices.length - 1 ? 6 : 0;
+            return context.dataIndex === prices.length - 1 ? 6 : 6;
          }
       }]
    },
@@ -80,8 +82,8 @@ new Chart(ctx, {
       layout: {
          padding: {
             top: 20,    // Отступ сверху
-            bottom: 0, // Отступ снизу
-            left: 0,   // Отступ слева
+            bottom: 10, // Отступ снизу
+            left: 10,   // Отступ слева
             right: 10   // Отступ справа
          }
       },
@@ -94,12 +96,17 @@ new Chart(ctx, {
             shadowOffsetY: 4
          },
          tooltip: {
-            font: {
+            bodyFont: {
                family: '"Better VCR", "JetBrains Mono", "Courier New", Courier, monospace',
-               family: 'Arial', // Шрифт
+               // family: 'Arial', // Шрифт
+               size: 30, // Размер шрифта
+               // weight: 'bold', // Толщина шрифта
+            },
+            titleFont: {
+               family: '"Better VCR", "JetBrains Mono", "Courier New", Courier, monospace',
                size: 20, // Размер шрифта
-               weight: 'bold', // Толщина шрифта
-             },
+               weight: 'normal'
+            },
             enabled: true, // Включить tooltip
             backgroundColor: 'rgba(0,0,0,1)', // Цвет фона окна
             titleColor: 'white', // Цвет заголовка
@@ -109,6 +116,21 @@ new Chart(ctx, {
             cornerRadius: 0, // Закругленные углы
             padding: 14, // Отступы внутри
             displayColors: false, // Отключить отображение цветных полосок для каждого значения
+            callbacks: {
+               labelTextColor: function () {
+                  return '#00ff84'; // Цвет текста
+               },
+               beforeLabel: function (context) {
+                  const { ctx } = context.chart;
+                  ctx.save();
+                  ctx.shadowColor = 'rgba(0, 255, 132, 0.8)'; // Цвет тени
+                  ctx.shadowBlur = 10; // Размытие тени
+                  ctx.shadowOffsetX = 2; // Смещение по X
+                  ctx.shadowOffsetY = 2; // Смещение по Y
+                  ctx.restore();
+                  return '';
+               }
+            }
          }
       },
       scales: {
