@@ -58,7 +58,7 @@ new Chart(ctx, {
    data: {
       labels: labels,
       datasets: [{
-         label: '',
+         label: 'Процент',
          fill: false,
          data: prices,
          borderWidth: 8,
@@ -81,7 +81,7 @@ new Chart(ctx, {
          padding: {
             top: 20,    // Отступ сверху
             bottom: 0, // Отступ снизу
-            left: 10,   // Отступ слева
+            left: 0,   // Отступ слева
             right: 10   // Отступ справа
          }
       },
