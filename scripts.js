@@ -565,8 +565,11 @@ const interval = setInterval(() => {
       container.style.display = "flex";
       document.body.style.overflow = "auto"; // Включаем прокрутку
    } else {
-      progress += 2;
-      progressText.textContent = progress + "%";
+      setTimeout(() => {
+         // 100/5000
+         progress += 2;
+         progressText.textContent = progress + "%";
+      }, 100);
    }
 }, 50);
 
