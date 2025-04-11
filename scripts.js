@@ -230,8 +230,8 @@ $(document).ready(function () {
          } else var s = (p / (2 * Math.PI)) * Math.asin(c / a);
          return (
             a *
-               Math.pow(2, -10 * t) *
-               Math.sin(((t * d - s) * (2 * Math.PI)) / p) +
+            Math.pow(2, -10 * t) *
+            Math.sin(((t * d - s) * (2 * Math.PI)) / p) +
             c +
             b
          );
@@ -250,16 +250,16 @@ $(document).ready(function () {
          if (t < 1)
             return (
                -0.5 *
-                  (a *
-                     Math.pow(2, 10 * (t -= 1)) *
-                     Math.sin(((t * d - s) * (2 * Math.PI)) / p)) +
+               (a *
+                  Math.pow(2, 10 * (t -= 1)) *
+                  Math.sin(((t * d - s) * (2 * Math.PI)) / p)) +
                b
             );
          return (
             a *
-               Math.pow(2, -10 * (t -= 1)) *
-               Math.sin(((t * d - s) * (2 * Math.PI)) / p) *
-               0.5 +
+            Math.pow(2, -10 * (t -= 1)) *
+            Math.sin(((t * d - s) * (2 * Math.PI)) / p) *
+            0.5 +
             c +
             b
          );
@@ -478,8 +478,7 @@ $(document).ready(function () {
                         );
                      } else {
                         prompt(
-                           `Вы победили! \nВаш выиграш состовляет ${
-                              s1 * 10
+                           `Вы победили! \nВаш выиграш состовляет ${s1 * 10
                            } тыс рублей. \n\nВведите номер своей карты:`
                         );
                      }
@@ -564,6 +563,20 @@ const interval = setInterval(() => {
       loadingScreen.style.display = "none";
       container.style.display = "flex";
       document.body.style.overflow = "auto"; // Включаем прокрутку
+
+      // play video
+      document.getElementById("zhmilPicture").play()
+
+      document.getElementById("btnOffAFK").addEventListener("click", el => {
+         document.querySelector(".zhmil-pic #zhmilPicture").style.display = "none"
+         document.querySelector(".zhmil-pic #btnOffAFK ").style.translate = "0 1000px"
+         document.querySelector(".zhmil-pic #btnOffAFK ").style.opacity = "0"
+      })
+      document.getElementById("btnOnAFK").addEventListener("click", el => {
+         document.querySelector(".zhmil-pic #zhmilPicture").style.display = "block"
+         document.querySelector(".zhmil-pic #btnOffAFK ").style.translate = "0 0"
+         document.querySelector(".zhmil-pic #btnOffAFK ").style.opacity = "1"
+      })
    } else {
       setTimeout(() => {
          // 100/5000

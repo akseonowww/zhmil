@@ -2015,3 +2015,60 @@ a.btn-buy:hover {
       align-items: flex-start;
    }
 }
+
+/* ===================== */
+/* AFK */
+#btnOffAFK {
+   position: absolute;
+   height: 62px;
+   width: 100%;
+   background: #000000;
+   color: #dbdbdb;
+   font-size: 28px;
+   font-weight: 700;
+   border: none;
+   display: none;
+   transition: all 0.5s;
+   cursor: pointer;
+   z-index: 10;
+   bottom: 0;
+}
+
+#btnOnAFK {
+   position: absolute;
+   height: 100%;
+   width: 432px;
+   background: #1c3d3a;
+   color: #7daba7;
+   font-size: 24px;
+   font-weight: 700;
+   border: none;
+   /* display: none; */
+   transition: all 0.5s;
+   cursor: pointer;
+   z-index: 4;
+   right: 0;
+   height: 62px;
+   bottom: 0;
+   margin-right: 6px;
+   scale: 0.9;
+   border-radius: 7px;
+   padding-top: 7px;
+   opacity: 0.5;
+   translate: 0px -14px;
+   border: 1px solid #121212b8;
+}
+
+.zhmil-pic:hover #btnOffAFK {
+   display: block;
+}
+
+.zhmil-pic:hover #btnOnAFK {
+   opacity: 1;
+   color: #fff;
+}
+
+.zhmil-pic video {
+   position: relative;
+   z-index: 5;
+}

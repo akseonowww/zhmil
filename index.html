@@ -954,24 +954,46 @@
                   </div>
                   <iframe
                      id="auсtionsOld"
-                     style="position: relative; z-index: 10;"
+                     style="position: relative; z-index: 10"
                      title="Помойный Аукцион"
                      width="300"
                      height="200"
                      src="https://web.archive.org/web/20200821005746/https://zhmil.ru/#expand"
                   >
                   </iframe>
+                  <div
+                     class="zhmil-pic"
+                     style="
+                        position: absolute;
+                        z-index: 100001;
+                        bottom: 0;
+                        right: 0;
+                        width: calc(432px + 61px);
+                        height: auto;
+                     "
+                  >
+                     <button id="btnOffAFK">Откл. режим АФК</button>
+                     <button id="btnOnAFK">Вкл. режим АФК</button>
+                     <video id="zhmilPicture" style="width: 100%; float: right" autoplay="true" loop="true" muted="false">
+                        <source src="./assets/zhmil-afk.mp4" type="video/mp4" />
+                        <!-- <source src="movie.ogg" type="video/ogg"> -->
+                        Ваш браузер не поддерживает видео.
+                     </video>
+                  </div>
                   <span
-                  style="
-                     position: absolute;
-                     z-index: 5;
-                     top: 25vh;
-                     left: 50%;
-                     width: 40vw;
-                     margin-left: -20vw;
-                     font-size: 3vh;
-                     text-align: center;
-                  "> Connection to Web Archive...</span>
+                     style="
+                        position: absolute;
+                        z-index: 5;
+                        top: 25vh;
+                        left: 50%;
+                        width: 40vw;
+                        margin-left: -20vw;
+                        font-size: 3vh;
+                        text-align: center;
+                     "
+                  >
+                     Connection to Web Archive...</span
+                  >
                   <img
                      style="
                         position: absolute;
