@@ -610,44 +610,44 @@ a.vote-btn {
 }
 
 .link i.logo-vk {
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f3/VK_Compact_Logo_%282021-present%29.svg);
+   background-image: url(./assets/logos/vk.svg);
 }
 .link i.logo-da {
-   background-image: url(https://www.donationalerts.com/img/brand/da.svg);
+   background-image: url(./assets/logos/da.svg);
 }
 .link i.logo-dp {
-   background-image: url(https://donatepay.ru/images/apple-touch.png);
+   background-image: url(./assets/logos/dpay.png);
 }
 .link i.logo-ma {
-   background-image: url(https://memealerts.com/android-chrome-512x512.png);
+   background-image: url(./assets/logos/mem-alert.png);
 }
 .link i.logo-yt {
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/YouTube_social_white_squircle.svg/1024px-YouTube_social_white_squircle.svg.png?20200112151940);
+   background-image: url(./assets/logos/yt.png);
 }
 .link i.logo-vkp {
-   background-image: url(https://habrastorage.org/getpro/habr/upload_files/7ed/ded/eb2/7eddedeb26f57114cdee791fbc0668ca.png);
+   background-image: url(./assets/logos/vkplay.png);
 }
 .link i.logo-kk {
-   background-image: url(https://avatars.mds.yandex.net/i?id=b80635ab783584aab980d7da83f6e3f2_l-12912265-images-thumbs&n=13);
+   background-image: url(./assets/logos/kick.jpg);
 }
 .link i.logo-tg {
-   background-image: url(https://scout-gps.ru/upload/medialibrary/f81/18s97bjkbzf46qrxta5jdg4jo7j9pond/telegram-2019-logo.svg);
+   background-image: url(./assets/logos/telegram.svg);
 }
 .link i.logo-tw {
-   background-image: url(https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/343_Twitch_logo-1024.png);
+   background-image: url(./assets/logos/twitch.png);
 }
 .link i.logo-bo {
-   background-image: url(https://static.boosty.to/assets/images/logoLetterB.4ec8e.svg);
+   background-image: url(./assets/logos/boosty.svg);
 }
 .link i.logo-rt {
-   background-image: url(https://static.rutube.ru/static/img/favicon-icons/icon.svg);
+   background-image: url(./assets/logos/rutube.svg);
 }
 
 .link i.logo-ar {
-   background-image: url(https://archive.org/images/glogo.jpg);
+   background-image: url(./assets/logos/weba.jpg);
 }
 .link i.logo-gd {
-   background-image: url(https://cdn.shortpixel.ai/sp/ret_img/shortpixel.com/img/google-drive.svg);
+   background-image: url(./assets/logos/gdrive.svg);
 }
 
 .links .link:hover {
