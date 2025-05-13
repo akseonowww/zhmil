@@ -557,12 +557,12 @@ const progressText = document.getElementById("progress");
 const container = document.querySelector(".loading-screen .container");
 
 let progress = 0;
-const interval = setInterval(() => {
-   if (progress >= 100) {
-      clearInterval(interval);
-      loadingScreen.style.display = "none";
-      container.style.display = "flex";
-      document.body.style.overflow = "auto"; // Включаем прокрутку
+// const interval = setInterval(() => {
+//    if (progress >= 100) {
+//       clearInterval(interval);
+//       loadingScreen.style.display = "none";
+//       container.style.display = "flex";
+//       document.body.style.overflow = "auto"; // Включаем прокрутку
 
       // play video
       document.getElementById("zhmilPicture").play()
@@ -577,14 +577,14 @@ const interval = setInterval(() => {
          document.querySelector(".zhmil-pic #btnOffAFK ").style.translate = "0 0"
          document.querySelector(".zhmil-pic #btnOffAFK ").style.opacity = "1"
       })
-   } else {
-      setTimeout(() => {
-         // 100/5000
-         progress += 2;
-         progressText.textContent = progress + "%";
-      }, 100);
-   }
-}, 50);
+   // } else {
+//       setTimeout(() => {
+//          // 100/5000
+//          progress += 2;
+//          progressText.textContent = progress + "%";
+//       }, 100);
+//    }
+// }, 50);
 
 // const nowTime = Date().split(" ")[4].split(":");
 // if (nowTime[0] === "16" && nowTime[0][0] === "4") {
